@@ -16,8 +16,8 @@ router.get("/", (req, res) => {
 //MAHASISWA
 router.get("/mahasiswa", getAllMahasiswa);
 router.post("/mahasiswa", createMahasiswa);
-router.patch("/mahasiswa/:NIM", editMahasiswa);
-router.delete("/mahasiswa/:NIM", deleteMahasiswa);
+router.patch("/mahasiswa/:nim", editMahasiswa);
+router.delete("/mahasiswa/:nim", deleteMahasiswa);
 
 //DOSEN
 router.get("/dosen", getAllDosen);

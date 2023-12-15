@@ -31,10 +31,10 @@ export const editMahasiswa = async (req, res) => {
   try {
     await Mahasiswa.update(req.body, {
       where: {
-        NIM: req.params.NIM,
+        nim: req.params.nim,
       },
     });
-    res.status(201).json({ msg: "Berhasil update Mahasiswa" });
+    res.status(201).json({ msg: "Berhasil update Mahasiswa : " });
   } catch (error) {
     console.error(error.message);
     res
