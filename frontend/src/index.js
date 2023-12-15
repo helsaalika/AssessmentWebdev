@@ -5,12 +5,17 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import TambahMahasiswa from "./components/tambahMahasiswa";
+import ListMahasiswa from "./components/listMahasiswa";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const router = createBrowserRouter([
   {
     path: "/tambahmahasiswa",
     element: <TambahMahasiswa />,
+  },
+  {
+    path: "/mahasiswa",
+    element: <ListMahasiswa />,
   },
 ]);
 root.render(
