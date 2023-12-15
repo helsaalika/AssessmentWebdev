@@ -2,20 +2,20 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 
-const ListMahasiswa = () => {
+const ListDosen = () => {
   const navigate = useNavigate();
-  const [mahasiswa, setMahasiswa] = useState([]);
+  const [dosen, setDosen] = useState([]);
 
   useEffect(() => {
-    getMahasiswa();
+    getDosen();
   }, []);
 
-  const getMahasiswa = async () => {
+  const getDosen = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/mahasiswa`);
+      const response = await axios.get(`http://localhost:5000/dosen`);
       console.log("Berhasil ambil data mahasiswa");
       console.log("Data : ", response.data);
-      setMahasiswa(response.data);
+      setDosen(response.data);
     } catch (error) {
       console.log(error.message);
     }
@@ -27,7 +27,7 @@ const ListMahasiswa = () => {
       <div className="bg-gray-200 h-screen box-border p-4 pt-0">
         <div className="flex justify-center items-center">
           <h1>
-            <b>List Mahasiswa</b>
+            <b>Dosen</b>
           </h1>
         </div>
         <div className="flex justify-center items-center p-2">
@@ -40,14 +40,14 @@ const ListMahasiswa = () => {
               >
                 <thead>
                   <tr>
-                    <th className="border px-4 py-2 w-1/2">Nim</th>
+                    <th className="border px-4 py-2 w-1/2">NIP</th>
                     <th className="border px-4 py-2 w-1/3">Nama</th>
-                    <th className="border px-4 py-2 w-1/8">prodi</th>
+                    <th className="border px-4 py-2 w-1/8">HP</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {mahasiswa.map((siswa) => (
-                    <tr key={siswa.nim}>
+                  {dosen.map((dos) => (
+                    <tr key={dos.nip}>
                       <td
                         className="border px-4 py-2"
                         style={{
@@ -55,7 +55,7 @@ const ListMahasiswa = () => {
                           overflowWrap: "break-word",
                         }}
                       >
-                        {siswa.namamhs}
+                        {dos.namadosen}
                       </td>
                       <td
                         className="border px-4 py-2"
@@ -64,7 +64,7 @@ const ListMahasiswa = () => {
                           overflowWrap: "break-word",
                         }}
                       >
-                        {siswa.prodi}
+                        {dos.hp}
                       </td>
                     </tr>
                   ))}
@@ -78,4 +78,4 @@ const ListMahasiswa = () => {
   );
 };
 
-export default ListMahasiswa;
+export default ListDosen;

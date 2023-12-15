@@ -6,6 +6,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import TambahMahasiswa from "./components/tambahMahasiswa";
 import ListMahasiswa from "./components/listMahasiswa";
+import ListDosen from "./components/listDosen";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const router = createBrowserRouter([
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
   {
     path: "/mahasiswa",
     element: <ListMahasiswa />,
+  },
+  {
+    path: "/dosen",
+    element: <ListDosen />,
   },
 ]);
 root.render(
